@@ -308,3 +308,22 @@ select {
 .dot-indicators > [aria-selected='true'] {
 	background-color: hsl(var(--clr-white) / 1) !important;
 }
+
+/* Number Indicators */
+.number-indicators > * {
+	cursor: pointer;
+	aspect-ratio: 1;
+	width: 3.25rem;
+	border-radius: 50%;
+	background-color: hsl(var(--clr-dark));
+	color: hsl(var(--clr-white));
+	border: 1px solid hsl(var(--clr-white) / 0.15);
+}
+.number-indicators > button:hover,
+.number-indicators > button:focus {
+	border-color: hsl(var(--clr-white) / 0.5);
+}
+.number-indicators > [aria-selected='true'] {
+	background-color: hsl(var(--clr-white) / 1) !important;
+	color: hsl(var(--clr-dark));
+}
