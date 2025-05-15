@@ -105,18 +105,19 @@ select {
 	display: flex;
 	gap: var(--gap, 1rem);
 }
-
 .grid {
 	display: grid;
 	gap: var(--gap, 1rem);
 }
-
+.flow > *:where(:not(:first-child)) {
+	margin-top: var(--flow-space, 1rem);
+	outline: 1px solid red;
+}
 .container {
 	padding-inline: 2em;
 	margin-inline: auto;
 	max-width: 80rem;
 }
-
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -205,7 +206,6 @@ select {
 .fs-600 {
 	line-height: 1.1;
 }
-
 .numbered-title {
 	font-family: var(--ff-sans-cond);
 	font-size: var(--fs-500);
