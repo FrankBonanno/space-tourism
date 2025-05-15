@@ -1,0 +1,58 @@
+/* ----------------- */
+/* Resets            */
+/* ----------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box Sizing */
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+/* Reset Margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+	margin: 0;
+}
+
+/* Body Setup */
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+}
+
+/* Image Setup */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Form Elements Setup */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove Animations For Those Who Turned It Off */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
