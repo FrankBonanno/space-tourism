@@ -186,6 +186,21 @@ select {
 	border: 0;
 }
 
+.skip-to-content {
+	position: absolute;
+	background-color: hsl(var(--clr-white));
+	color: hsl(var(--clr-dark));
+	padding: 0.5em 1em;
+	margin-inline: auto;
+	z-index: 1000;
+	transform: translateY(-100%);
+	transition: transform 300ms ease-in-out;
+	text-decoration: none;
+}
+.skip-to-content:focus {
+	transform: translateY(0);
+}
+
 /* ----------------- */
 /* Colors            */
 /* ----------------- */
@@ -306,6 +321,9 @@ select {
 	transform: scale(1.5);
 	opacity: 1;
 }
+.large-button:focus {
+	outline: none;
+}
 
 /* Header Logo */
 .logo {
@@ -317,20 +335,69 @@ select {
 	display: none;
 }
 
+/* Primary Header */
+.primary-header {
+	justify-content: space-between;
+	align-items: center;
+}
+
 /* Primary Navigation */
 .primary-navigation {
+	--gap: clamp(1.5rem, 5vw, 3.5rem);
 	--underline-gap: 2rem;
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	background-color: hsl(var(--clr-dark) / 0.95);
 }
+.primary-navigation a {
+	text-decoration: none;
+}
+.primary-navigation a > span {
+	font-weight: 700;
+	margin-right: 0.5em;
+}
+
+@media (min-width: 35em) {
+	.primary-navigation {
+		padding-inline: clamp(3rem, 7vw, 7rem);
+	}
+}
+
+@media (min-width: 35em) and (max-width: 44.99em) {
+	.primary-navigation a > span {
+		display: none;
+	}
+}
+
+@media (min-width: 45em) {
+	.primary-header::after {
+		content: '';
+		display: block;
+		position: relative;
+		height: 1px;
+		width: 100%;
+		margin-right: -2.5rem;
+		background-color: hsl(var(--clr-white) / 0.25);
+		order: 1;
+		z-index: 10;
+	}
+	nav {
+		order: 2;
+	}
+
+	.primary-navigation {
+		margin-block: 2rem;
+	}
+}
+
 @supports (backdrop-filter: blur(1.5rem)) {
 	.primary-navigation {
 		background-color: hsl(var(--clr-white) / 0.05);
 		backdrop-filter: blur(1.5rem);
 	}
 }
+
 @media (max-width: 35rem) {
 	.primary-navigation {
 		--underline-gap: 0.75rem;
@@ -372,13 +439,6 @@ select {
 		outline: 5px solid hsl(var(--clr-white) / 0.5);
 		outline-offset: 5px;
 	}
-}
-.primary-navigation a {
-	text-decoration: none;
-}
-.primary-navigation a > span {
-	font-weight: 700;
-	margin-right: 0.5em;
 }
 
 /* Underline Indicators */
