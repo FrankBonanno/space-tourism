@@ -693,3 +693,7 @@ body {
 		align-self: end;
 	}
 }
+
+[hidden] {
+	display: none !important;
+}
